@@ -1,0 +1,8 @@
+{
+  "name": "File",
+  "description": "Sistema Operativo de Inteligencia Deportiva 360° - Core Intelligence Athlete (CIA)",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation"
+  ]
+}
