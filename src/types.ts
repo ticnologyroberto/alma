@@ -28,12 +28,73 @@ export interface AIAnalysis {
   recommendation: string;
 }
 
+export interface Injury {
+  id: string;
+  name: string;
+  comment: string;
+  date: string;
+}
+
+export interface HealthData {
+  blood_group: string;
+  last_medical_review: string;
+  weight: number;
+  height: number;
+  is_active: boolean;
+  injuries: Injury[];
+  tests: {
+    speed_test_1: string;
+    strength_test: string;
+    cooper_test: string;
+    navette_test: string;
+    extra_test: string;
+  };
+}
+
+export interface ExecutedDecision {
+  id: string;
+  date: string;
+  playerIds: string[];
+  playerNames: string[];
+  impact: string;
+  verdict: string;
+  details: {
+    totalValue: number;
+    avgToxic: number;
+    monthlySavings: number;
+  };
+}
+
+export interface Child {
+  name: string;
+  age: number;
+}
+
+export interface SupportNote {
+  id: string;
+  date: string;
+  professional_name: string;
+  psychological_score: number;
+  report: string;
+  is_solved: boolean;
+}
+
+export interface PlayerCareData {
+  wife_girlfriend: string;
+  children: Child[];
+  residence_country: string;
+  observations: string[];
+  notes: SupportNote[];
+}
+
 export interface PlayerData {
   player_id: string;
   identity: PlayerIdentity;
   financials: Financials;
   performance: Performance;
   ai_analysis: AIAnalysis;
+  health: HealthData;
+  care?: PlayerCareData;
 }
 
 export type ModuleId = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'CHAT';
